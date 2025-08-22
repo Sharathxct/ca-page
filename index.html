@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Address Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .address-section {
+            margin: 25px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #007bff;
+            border-radius: 5px;
+        }
+        
+        .address {
+            font-family: 'Courier New', monospace;
+            background-color: #e9ecef;
+            padding: 8px 12px;
+            border-radius: 4px;
+            word-break: break-all;
+            margin: 10px 0;
+            border: 1px solid #dee2e6;
+        }
+        
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .info-box {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .inline-address {
+            font-family: 'Courier New', monospace;
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .mixed-content {
+            background-color: #f1f3f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Solana Address Detection Test Page</h1>
+        
+        <div class="info-box">
+            <strong>Purpose:</strong> This page contains various Solana public addresses in different formats and contexts to test DOM parsing and regex detection capabilities.
+        </div>
+        
+        <div class="address-section">
+            <h3>📋 Primary Test Addresses</h3>
+            
+            <div class="address">3vdgnEte44yKVPksCszftjV5FKvfnk1K5sEJKUvCsend</div>
+            <div class="description">Contract Address #1</div>
+            
+            <div class="address">3mNHDX54Y8FXfGAbchwpGQ6Yh16X8nvk3x8Mukjasend</div>
+            <div class="description">Contract Address #2</div>
+            
+            <div class="address">3nf8LgahHm57gEUx64cDNJf4h53C2MwqZCK6LGDTsend</div>
+            <div class="description">Contract Address #3</div>
+            
+            <div class="address">2AFzzF7EKDygNJ2VthGWNSftCthpSkTmqSg9p8bFsend</div>
+            <div class="description">Contract Address #4</div>
+            
+            <div class="address">GA46iPDDx5E9ezvC5Lv7jUsE4ifhprmodmmnLSabMT9u</div>
+            <div class="description">Contract Address #5</div>
+        </div>
+        
+        <div class="address-section">
+            <h3>🔤 Inline Text with Addresses</h3>
+            <p>Here are some addresses embedded in regular text: The token contract <span class="inline-address">3vdgnEte44yKVPksCszftjV5FKvfnk1K5sEJKUvCsend</span> has been deployed successfully. You can also find the liquidity pool at <span class="inline-address">GA46iPDDx5E9ezvC5Lv7jUsE4ifhprmodmmnLSabMT9u</span> for trading purposes.</p>
+        </div>
+        
+        <div class="address-section">
+            <h3>📝 List Format</h3>
+            <ul>
+                <li>Primary Contract: 3mNHDX54Y8FXfGAbchwpGQ6Yh16X8nvk3x8Mukjasend</li>
+                <li>Secondary Contract: 3nf8LgahHm57gEUx64cDNJf4h53C2MwqZCK6LGDTsend</li>
+                <li>Backup Contract: 2AFzzF7EKDygNJ2VthGWNSftCthpSkTmqSg9p8bFsend</li>
+            </ul>
+        </div>
+        
+        <div class="mixed-content">
+            <h3>🎯 Mixed Content Challenge</h3>
+            <p>This section contains addresses in various formats to test your regex:</p>
+            <p>Address with prefix: solana:3vdgnEte44yKVPksCszftjV5FKvfnk1K5sEJKUvCsend</p>
+            <p>Address with spaces: 3mNHDX54Y8FXfGAbchwpGQ6Yh16X8nvk3x8Mukjasend (verified)</p>
+            <p>Address in quotes: "GA46iPDDx5E9ezvC5Lv7jUsE4ifhprmodmmnLSabMT9u"</p>
+            <p>Address with punctuation: Contract 2AFzzF7EKDygNJ2VthGWNSftCthpSkTmqSg9p8bFsend.</p>
+        </div>
+        
+        <div class="address-section">
+            <h3>🧪 Edge Cases</h3>
+            <div id="dynamic-content">
+                <p>Dynamically loaded address: <span id="dynamic-address">3nf8LgahHm57gEUx64cDNJf4h53C2MwqZCK6LGDTsend</span></p>
+            </div>
+            <input type="text" placeholder="Paste address here: 3vdgnEte44yKVPksCszftjV5FKvfnk1K5sEJKUvCsend" style="width: 100%; padding: 8px; margin: 10px 0;">
+            <textarea placeholder="Multi-line input with address:&#10;GA46iPDDx5E9ezvC5Lv7jUsE4ifhprmodmmnLSabMT9u" style="width: 100%; height: 60px; padding: 8px;"></textarea>
+        </div>
+        
+        <div class="info-box">
+            <strong>Testing Notes:</strong>
+            <ul>
+                <li>All addresses follow Solana's base58 encoding format</li>
+                <li>Addresses are 32-44 characters in length</li>
+                <li>Test your extension on different DOM elements (divs, spans, inputs, etc.)</li>
+                <li>Check detection in dynamically loaded content</li>
+            </ul>
+        </div>
+        
+        <script>
+            // Simulate dynamic content loading
+            setTimeout(() => {
+                const dynamicDiv = document.createElement('div');
+                dynamicDiv.innerHTML = '<p>Late-loaded address: <strong>2AFzzF7EKDygNJ2VthGWNSftCthpSkTmqSg9p8bFsend</strong></p>';
+                document.getElementById('dynamic-content').appendChild(dynamicDiv);
+            }, 2000);
+            
+            // Add some interactive elements
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log('Page loaded with test addresses for extension detection');
+            });
+        </script>
+    </div>
+</body>
+</html>
